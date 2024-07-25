@@ -2,7 +2,6 @@ inputs=Array.from(document.getElementsByClassName("code"))
 // console.log(inputs)
 inputs.forEach((inp,idx)=>{
 	inp.addEventListener(("keyup"),(event)=>{
-        console.log(event);
 		if( event.keyCode >= 48 && event.keyCode <= 57 && idx+1<inputs.length){
 			inputs[idx+1].focus()
 		}
@@ -11,5 +10,7 @@ inputs.forEach((inp,idx)=>{
 			inputs[idx-1].focus()
 		}
 	})
-	console.log(inp);
+})
+window.addEventListener('load', () => {
+  inputs[0].focus();
 })
